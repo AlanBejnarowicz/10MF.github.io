@@ -72,6 +72,95 @@
     </div>
   </section>
 
+
+
+  <section class="drone-animation-section" id="drone-animation">
+
+    <!-- High-res still (initially hidden) -->
+    <img 
+      src="assets/anims/animation_1/0001.png" 
+      alt="Drone Initial Image" 
+      id="droneInitialImg" 
+      style="display: none;"
+    >
+
+
+    <!-- GIF (initially no src) -->
+    <img 
+      alt="Drone GIF Animation" 
+      id="droneGif"
+      data-src="assets/anims/animation_1/drone_gif.gif"
+      style="display: block;"
+    >
+    
+    <!-- High-res still (initially hidden) -->
+    <img 
+      src="assets/anims/animation_1/0030.png" 
+      alt="Drone Final Image" 
+      id="droneFinalImg" 
+      style="display: none;"
+    >
+    
+    <!-- Overlaid text -->
+    <div class="drone-info">
+      <h2>Technical Information</h2>
+      <ul>
+        <li>Prop Size: 10 inches</li>
+        <li>Motor KV: 1800KV</li>
+        <li>Frame Weight: 250g</li>
+        <li>Total AUW: 750g</li>
+        <li>Flight Controller: BetaFlight 4.3</li>
+        <!-- etc. -->
+      </ul>
+    </div>
+  </section>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const droneSection = document.getElementById('drone-animation');
+      const droneInitialImg = document.getElementById('droneInitialImg');
+      const droneGif = document.getElementById('droneGif');
+      const droneFinalImg = document.getElementById('droneFinalImg');
+  
+      const GIF_DURATION = 2000; // e.g. 5 seconds for GIF to play
+  
+      // Use Intersection Observer to detect when .drone-animation-section is in view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // 1. Show the initial image
+              droneInitialImg.style.display = 'block';
+  
+              // 2. Start playing the GIF after a 5-second delay
+              setTimeout(() => {
+                droneInitialImg.style.display = 'none';
+                droneGif.src = droneGif.dataset.src;
+  
+                // 3. After GIF_DURATION, hide the GIF, show the final image
+                setTimeout(() => {
+                  droneGif.style.display = 'none';
+                  droneFinalImg.style.display = 'block';
+                }, GIF_DURATION);
+              }, 1000); // 1-second delay
+  
+              // 4. Unobserve so this only runs once
+              observer.unobserve(droneSection);
+            }
+          });
+        },
+        // Observer options (adjust threshold as you prefer)
+        { threshold: 0.3 } // trigger when 30% of the section is visible
+      );
+  
+      observer.observe(droneSection);
+    });
+  </script>
+
+
+
+
+
   <!-- ======= GALLERY SECTION ======= -->
   <section class="gallery-section" id="gallery">
     <div class="container">

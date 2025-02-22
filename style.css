@@ -30,6 +30,7 @@
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    
   }
   
   /* Headings & Text */
@@ -40,6 +41,7 @@
   
   p, li, a, span {
     color: #ccc; /* Slightly lighter than body background for contrast */
+
   }
   
   /* Links */
@@ -203,7 +205,7 @@
 
 .btn::after {
     /* The blinking caret */
-    content: "|";               /* or "_", "█", etc. */
+    content: "_";               /* or "_", "█", etc. */
     display: inline-block;
     margin-left: 0.2rem;
     animation: blink 1s infinite;
@@ -241,6 +243,7 @@
     margin: 0 auto;
     line-height: 1.6;
     color: #ccc;
+    font-size: 1.5rem;
   }
   
   /* ------------- Gallery Section ------------- */
@@ -327,5 +330,73 @@
   .footer p {
     color: #999;
     font-size: 1.5rem;
+  }
+  
+
+ /* Full-screen container */
+.drone-animation-section {
+    position: relative;   /* So child elements can be absolutely positioned */
+    width: 100%;
+    height: 100vh;        /* Full browser window height */
+    overflow: hidden;     /* Hide any overflow if the image is large */
+  }
+  
+  /* Both images occupy the entire section */
+  .drone-animation-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Ensures the image fills without distortion */
+  }
+  
+/* Drone info box is over the images */
+.drone-info {
+    position: relative;   /* Stacking context: sits above the absolutely positioned images */
+    z-index: 1;           /* Ensures it's above the images (which default to z-index: 0) */
+
+    /* Positioning/Styling for text */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start;  /* Align items to the left */
+    justify-content: center; /* Vertically center the content */
+    text-align: left;       /* Align text to the left */
+    color: #fff;            /* White text on dark images */
+    padding: 2rem;          /* Spacing around the text */
+    box-sizing: border-box;
+    /* Optionally add a semi-transparent background if text is hard to read:
+         background-color: rgba(0,0,0,0.4);
+    */
+}
+
+/* Style the info text */
+.drone-info h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding-left: 5rem;
+}
+
+.drone-info ul {
+    list-style: none;
+    padding-left: 5rem;
+    line-height: 1.6;
+}
+
+.drone-info li {
+    margin-bottom: 0.5rem;
+}
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+    .drone-info {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    .drone-info h2 {
+      font-size: 1.5rem;
+    }
   }
   

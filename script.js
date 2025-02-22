@@ -25,9 +25,32 @@ hamburger.addEventListener('click', () => {
         // Add a class that includes the blinking caret
         typedBtn.classList.add('with-caret');
       }
+
+        // delay before next character
+        rand_time = Math.floor(Math.random() * 60) + 20;
+        clearInterval(typingInterval);
+        typingInterval = setInterval(typeWriter, rand_time);
+
     }
 
-    // Start typing: call 'typeWriter' every 100ms
-    rand_time = Math.floor(Math.random() * 60) + 20;
-    typingInterval = setInterval(typeWriter, rand_time);
+
+    typingInterval = setInterval(typeWriter, 50);
+  });
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const droneGif = document.getElementById('droneGif');
+    const droneFinalImg = document.getElementById('droneFinalImg');
+  
+    setTimeout(() => {
+      // Fade out the GIF
+      droneGif.classList.add('hidden');
+      // Fade in the final image slightly later
+      setTimeout(() => {
+        droneGif.style.display = 'none';
+        droneFinalImg.style.display = 'block';
+        droneFinalImg.classList.remove('hidden');
+      }, 800); // match transition duration (0.8s)
+    }, GIF_DURATION);
   });
