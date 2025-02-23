@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="plot_style.css" />
 </head>
 <body>
 
@@ -107,9 +108,9 @@
       <ul>
         <li>Prop Size: 10 inches</li>
         <li>Motor KV: 1800KV</li>
-        <li>Frame Weight: 250g</li>
-        <li>Total AUW: 750g</li>
-        <li>Flight Controller: BetaFlight 4.3</li>
+        <li>Netto Weight: 876g</li>
+        <li>Total AUW: 1558g with LIPO 4s 5200mAh</li>
+        <li>Flight Controller: Matek F722SE</li>
         <!-- etc. -->
       </ul>
     </div>
@@ -177,6 +178,40 @@
 
 
 
+  <section class="plot-section" id="plot">
+    <div class="container">
+      <h2>Flight Data</h2>
+      <div class="plot-wrapper">
+        <!-- You can use this <div> for anything else you want -->
+        <div id="plot"></div>
+        
+        <div class="chartContainer">
+          <div class="chart-title">Z-Axis Acceleration & Velocity</div>
+            <h2 style="text-align: center; color: #00bfa5;">Max Z-Axis Acceleration 4.875G</h2>
+          <canvas id="zAxisChart"></canvas>
+        </div>
+  
+        <!-- Include Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Your external JS for fetching CSV & rendering the chart -->
+        <script src="scripts/plot.js"></script>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======= BATTERY SECTION ======= -->
+  <section class="battery-section" id="battery">
+    <div class="container">
+      <h2>Test Information</h2>
+      <p>
+        The test was conducted with drone powered by 4s1p 5200mAh LiPo battery with an XT90 connector. The battery weight is 548g.
+      </p>
+    </div>
+  </section>
+
+
+
   <!-- ======= VIDEOS SECTION ======= -->
   <section class="videos-section" id="videos">
     <div class="container">
@@ -213,6 +248,6 @@
   </footer>
 
   <!-- ======= JavaScript ======= -->
-  <script src="script.js"></script>
+  <script src="scripts/anim.js"></script>
 </body>
 </html>

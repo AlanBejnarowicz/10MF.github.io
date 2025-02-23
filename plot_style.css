@@ -1,0 +1,19 @@
+    /* Example CSS for the chart container */
+    .chartContainer {
+        width: 100%;
+        margin: 40px auto;
+      }
+  
+      /* Makes the canvas responsive while maintaining aspect ratio */
+      .chartContainer canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+  
+      /* Optional: Some styling for a title if you want to place text above the chart */
+      .chart-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        
+        }

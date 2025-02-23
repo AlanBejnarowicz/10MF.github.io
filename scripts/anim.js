@@ -38,7 +38,6 @@ hamburger.addEventListener('click', () => {
   });
 
 
-
   document.addEventListener("DOMContentLoaded", () => {
     const droneGif = document.getElementById('droneGif');
     const droneFinalImg = document.getElementById('droneFinalImg');
