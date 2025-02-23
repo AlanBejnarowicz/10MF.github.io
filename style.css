@@ -333,7 +333,7 @@
   }
   
 
- /* Full-screen container */
+ /* ------------------------------ Animation ------------------------------ */
 .drone-animation-section {
     position: relative;   /* So child elements can be absolutely positioned */
     width: 100%;
@@ -381,7 +381,7 @@
 
 .drone-info ul {
     list-style: none;
-    padding-left: 5rem;
+    padding-left: 7rem;
     line-height: 1.6;
 }
 
