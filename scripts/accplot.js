@@ -5,12 +5,12 @@ Chart.defaults.font.size = 20; // Affects all text
 Chart.defaults.font.family = '"VT323", sans-serif';
 
 // 2) Intersection Observer: watch the section (with id="plot")
-const plotSection = document.getElementById('plot');
-const observer = new IntersectionObserver((entries, obs) => {
+const plotSectionacc = document.getElementById('plotacc');
+const observeracc = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       // 3) When the plot section enters the viewport, create the chart
-      createChart();
+      createAccChart();
       // Stop observing so the chart isn't recreated repeatedly
       obs.unobserve(entry.target);
     }
@@ -18,10 +18,10 @@ const observer = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.2 });
 
 // Start observing the plot section
-observer.observe(plotSection);
+observeracc.observe(plotSectionacc);
 
 // 4) Define chart creation in a function
-function createChart() {
+function createAccChart() {
   // Path (or URL) to your CSV file
   const csvUrl = 'assets/csv/acc_data.csv';
 
@@ -136,6 +136,8 @@ function createChart() {
           }
         }
       });
+
+
     })
     .catch(error => {
       console.error('Error loading or parsing CSV:', error);

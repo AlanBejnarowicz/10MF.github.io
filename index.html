@@ -51,7 +51,7 @@
     
     <div class="hero-content">
     <h1>&lt;10" FPVQUAD&gt;</h1>
-      <p>Powerful, stable, long range. Build your own high-performance drone.</p>
+      <p>Powerful, stable, long range. Build your own high-performance drone. <br> Build it yourself.</p>
 
       <a href="#store" class="btn" id="typed-btn"></a>
 
@@ -116,10 +116,11 @@
     <h2 style="color: #00bfa5;">Technical Information</h2>
       <ul>
         <li>Prop Size: 10 inches</li>
-        <li>Motor KV: 1800KV</li>
         <li>Netto Weight: 876g</li>
         <li>Total AUW: 1558g with LIPO 4s 5200mAh</li>
-        <li>Flight Controller: Matek F722SE</li>
+        <li>Acceleration: 5G</li>
+        <li>Hovering efficiency: ~250 mAh/min</li>
+
       </ul>
     </div>
   </section>
@@ -186,12 +187,12 @@
 
 
 
-  <section class="plot-section" id="plot">
+  <section class="plot-section" id="plotacc">
     <div class="container">
       <h2>Flight Data</h2>
       <div class="plot-wrapper">
-        <!-- You can use this <div> for anything else you want -->
-        <div id="plot"></div>
+
+        <div id="plotacc"></div>
         
         <div class="chartContainer">
           <div class="chart-title">Z-Axis Acceleration & Velocity</div>
@@ -201,8 +202,28 @@
   
         <!-- Include Chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <!-- Your external JS for fetching CSV & rendering the chart -->
-        <script src="scripts/plot.js"></script>
+        <script src="scripts/accplot.js"></script>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Battery usage plot -->
+  <section class="plot-section" id="plotbatt">
+    <div class="container">
+      <div class="plot-wrapper">
+        
+        <div id="plotbatt"></div>
+        
+        <div class="chartContainer">
+          <div class="chart-title">Excellent hover time</div>
+            <h2 style="text-align: center; color: #00bfa5;">20 min of hover time with 5200mAh 4s LIPO</h2>
+          <canvas id="BattChart"></canvas>
+        </div>
+  
+        <!-- Include Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="scripts/battplot.js"></script>
       </div>
     </div>
   </section>
@@ -213,7 +234,7 @@
     <div class="container">
       <h2>Test Information</h2>
       <p>
-        The test was conducted with drone powered by 4s1p 5200mAh LiPo battery with an XT90 connector. The battery weight is 548g.
+        Every test was conducted with drone powered by 4s1p 5200mAh LiPo battery with an XT90 connector. The battery weight is 548g.
       </p>
     </div>
   </section>
@@ -224,11 +245,8 @@
   <section class="videos-section" id="videos">
     <div class="container">
       <h2>Flight Videos</h2>
-      <div class="video-wrapper">
-        <video controls width="100%">
-          <source src="assets/videos/flight_demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div class="video-wrapper"></div>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/PGVDZIdNths" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -238,12 +256,10 @@
     <div class="container">
       <h2>3D Print Files</h2>
       <p>
-        Ready to build your own 10-inch drone?  Download or purchase the STL files below:
+        Ready to build your own 10-inch drone?  Download the STL files below:
       </p>
       <ul>
         <li><a href="#0" target="_blank">Free STL Download</a></li>
-        <li><a href="#0" target="_blank">Purchase Official Files</a></li>
-        <!-- Link to any e-commerce platform like Gumroad, MyMiniFactory, PayPal, etc. -->
       </ul>
     </div>
   </section>

@@ -251,9 +251,22 @@
   .renders-section, 
   .videos-section, 
   .store-section {
-    padding: 4rem 0;
+    padding: 4rem;
     background-color: #121212;
     font-size: 1.5rem;
+  }
+
+  .videos-section {
+    position: relative;
+    padding-top: 45.5%; 
+  }
+  .videos-section iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
   }
   
   .gallery-section h2,
@@ -388,6 +401,7 @@
 
 .drone-info li {
     margin-bottom: 0.5rem;
+    font-size: 1.3rem;
 }
   
   /* Responsive for smaller screens */
