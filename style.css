@@ -257,20 +257,14 @@
   }
 
   .videos-section {
-    
     position: relative;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
+    width: 100%; /* Make the section full width of its container */
+
+    height: 100%;
+    margin: 0 auto; /* Center the section */
   }
-  .videos-section iframe {
-    position: absolute;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    height: 80%;
-    transform: translate(-50%, -50%);
-  }
+
+
   
   .gallery-section h2,
   .renders-section h2,
