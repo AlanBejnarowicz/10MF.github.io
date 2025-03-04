@@ -105,6 +105,8 @@ function createBattChart() {
                 text: 'Voltage [V]'
               },
               beginAtZero: true,
+              min: 12,
+              max: 18,
               grid: {
                 display: true,
                 color: 'rgba(200, 200, 200, 0.2)',

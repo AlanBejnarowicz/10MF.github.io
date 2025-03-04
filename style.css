@@ -259,7 +259,6 @@
   .videos-section {
     position: relative;
     width: 100%; /* Make the section full width of its container */
-
     height: 100%;
     margin: 0 auto; /* Center the section */
   }
